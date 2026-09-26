@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Very Important Question 🦋</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6ec, #d9e7ff, #e5d5ff);
+      overflow: hidden;
+      color: #4b385d;
+    }
+
+    .card {
+      width: min(90%, 600px);
+      padding: 45px 35px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(80, 50, 100, 0.18);
+      position: relative;
+      z-index: 2;
+      animation: popIn 0.7s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 13px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 18px rgba(80, 50, 100, 0.18);
+    }
+
+    .yes {
+      background: #b8f2c2;
+      color: #315d3c;
+    }
+
+    .no {
+      background: #ffc4d6;
+      color: #71394c;
+    }
+
+    .message {
+      text-align: left;
+      margin-top: 20px;
+      padding: 25px;
+      background: #fff7fc;
+      border-radius: 20px;
+      line-height: 1.7;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .signature {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .butterfly {
+      position: fixed;
+      font-size: 30px;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    .b1 {
+      top: 12%;
+      left: 10%;
+    }
+
+    .b2 {
+      top: 70%;
+      right: 10%;
+      animation-delay: 1.5s;
+    }
+
+    .b3 {
+      top: 20%;
+      right: 15%;
+      animation-delay: 3s;
+    }
+
+    .b4 {
+      bottom: 10%;
+      left: 15%;
+      animation-delay: 2s;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="butterfly b1">🦋</div>
+  <div class="butterfly b2">🦋</div>
+  <div class="butterfly b3">🦋</div>
+  <div class="butterfly b4">🦋</div>
+
+  <div class="card">
+
+    <!-- QUESTION SCREEN -->
+    <div id="questionScreen">
+
+      <h1>🦋 Is Sora a real butterfly?</h1>
+
+      <p id="questionText">
+        This is a very serious and important question.
+      </p>
+
+      <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes 🦋</button>
+        <button class="no" onclick="sayNo()">No 😭</button>
+      </div>
+
+    </div>
+
+    <!-- MESSAGE SCREEN -->
+    <div id="messageScreen" class="hidden">
+
+      <h1>💌 A little message for you</h1>
+
+      <div class="message">
+        <p>
+          Dear Fatex,
+        </p>
+
+        <p>
+          I just wanted to say that you’re one of the few people I genuinely
+          care about and love on Discord. You’re amazing, talented, competent,
+          and genuinely kind-hearted.
+        </p>
+
+        <p>
+          I’m so happy that I met you. You’re inspiring in your own way and
+          definitely on some nonchalant shi. 😭
+        </p>
+
+        <p>
+          Please always love, cherish, and take care of yourself, because you
+          deserve it. You also remind me of a cupcake because you’re just as
+          sweet as one. 🙈🧁
+        </p>
+
+        <p>
+          I’m really glad you’re here. 💗
+        </p>
+
+        <div class="signature">
+          — From someone who thinks you’re pretty awesome 🦋
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function sayNo() {
+      const question = document.getElementById("questionText");
+
+      question.innerHTML = `
+        <strong>Use ur full brain. 🧠</strong><br><br>
+        Think again. 😭
+      `;
+    }
+
+    function sayYes() {
+      document.getElementById("questionScreen").classList.add("hidden");
+      document.getElementById("messageScreen").classList.remove("hidden");
+    }
+
+  </script>
+
+</body>
+</html>
